@@ -6,6 +6,7 @@ klippy_uds_address = /tmp/klippy_uds
 [authorization]
 trusted_clients = 
 	10.0.0.0/8
+	127.0.0.1
 	100.88.229.100
 	100.126.166.42
 	127.0.0.0/8
@@ -73,4 +74,13 @@ type = git_repo
 path = ~/klipper-led_effect
 origin = https://github.com/julianschill/klipper-led_effect.git
 is_system_service = False
+
+[update_manager KlipperScreen]
+type = git_repo
+path = ~/KlipperScreen
+origin = https://github.com/jordanruthe/KlipperScreen.git
+env = ~/.KlipperScreen-env/bin/python
+requirements = scripts/KlipperScreen-requirements.txt
+install_script = scripts/KlipperScreen-install.sh
+managed_services = KlipperScreen
 
